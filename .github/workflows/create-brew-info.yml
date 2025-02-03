@@ -1,0 +1,25 @@
+name: Build
+on:
+  push
+  # push:
+  #   branches: master
+
+jobs:
+  json:
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: create brew info
+        run: |
+          rm -rf Info
+          mkdir -p Info
+          cd Formula
+          for formula in *.rb; do
+            brew info --json "$formula" | jq '.[0]? // .' > ../Info/${formula/%rb/json}
+          done
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update brew info"
+          file_pattern: Info
