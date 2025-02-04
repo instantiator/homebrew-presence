@@ -1,5 +1,7 @@
 # homebrew-presence
 
+![Homebrew tap](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/instantiator/homebrew-presence/master/Info/presence-cli.json&query=$.versions.stable&label=instantiator/presence/presence-cli)
+
 A homebrew tap for the [Presence](https://instantiator.dev/presence) CLI tools.
 
 ## Installation
