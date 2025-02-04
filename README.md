@@ -14,8 +14,9 @@ brew install instantiator/presence/presence-cli
 ## CLI documentation
 
 - [Install the Presence CLI tools](https://instantiator.dev/presence/cli/install-cli-tools.html)
-- [Using `Presence.SocialFormat.Console`](https://instantiator.dev/presence/cli/presence-social-format-console.html)
-- [Using `Presence.Posting.Console`](https://instantiator.dev/presence/cli/presence-posting-console.html)
+- [How to prepare content](https://instantiator.dev/presence/guides/create-with-markdown.md) (in a markdown-like format)
+- [How to format threads from content](https://instantiator.dev/presence/cli/presence-social-format-console.html)
+- [How to post threads to social networks](https://instantiator.dev/presence/cli/presence-posting-console.html)
 
 ## Project links
 
