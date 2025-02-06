@@ -6,10 +6,19 @@ A homebrew tap for the [Presence](https://instantiator.dev/presence) CLI tools.
 
 ## Installation
 
+Tap `instantiator/presence` and install the `presence-cli` formula:
+
 ```bash
 brew tap instantiator/presence
 brew install instantiator/presence/presence-cli
 ```
+
+Or update to latest:
+
+```bash
+brew upgrade instantiator/presence/presence-cli
+```
+
 
 ## CLI documentation
 
