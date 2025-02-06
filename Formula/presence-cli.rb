@@ -1,12 +1,12 @@
 class PresenceCli < Formula
     desc "Tools for formatting and posting threads to social networks."
     homepage "https://instantiator.dev/presence"
-    url "https://github.com/instantiator/presence/releases/download/0.3.0/Presence.zip"
-    version "0.3.0"
+    url "https://github.com/instantiator/presence/releases/download/0.3.1/Presence.zip"
+    version "0.3.1"
     license "MIT"
     
     # get sha: shasum -a 256 Presence.zip
-    sha256 "f6368eabae88b6ca176c9b4f148468492427d0da5d62e8c33e35d6b3f55e7f93"
+    sha256 "75a49fff78bc9226c07041f76e4676f1d3bcdd33c0f1a07cdff94dbd5d95f992"
 
     def install
         # linux
