@@ -9,17 +9,17 @@
   "license": "MIT",
   "homepage": "https://instantiator.dev/presence",
   "versions": {
-    "stable": "0.3.2",
+    "stable": "0.3.3",
     "head": null,
     "bottle": false
   },
   "urls": {
     "stable": {
-      "url": "https://github.com/instantiator/presence/releases/download/0.3.2/Presence.zip",
+      "url": "https://github.com/instantiator/presence/releases/download/0.3.3/Presence.zip",
       "tag": null,
       "revision": null,
       "using": null,
-      "checksum": "e5a434da12ca9a4af35068899ea0b56127d95f3510cb186ed7ea2ffb0ec216c0"
+      "checksum": "b88afa5ec1dfaed39e9067ae04210e774f725659cdb3a5a91f931db3d8923e30"
     }
   },
   "revision": 0,
@@ -58,6 +58,6 @@
   "tap_git_head": null,
   "ruby_source_path": null,
   "ruby_source_checksum": {
-    "sha256": "8debfd843b65fc423d8c9ac3aa3e30f4abcf71f7e1c3a639367c91c53ebfea92"
+    "sha256": "53020da447cba2ab1e4fa57032e284dc0aa8ee6e5ee5844c2ec73fc8109397da"
   }
 }
