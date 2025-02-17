@@ -124,7 +124,7 @@ echo
 
 # regenerate Info/*.json for all formulae
 FORMULA_FILENAME=$(basename $FORMULA_PATH)
-$INFO_PATH="Info/${FORMULA_FILENAME/%rb/json}"
+INFO_PATH="Info/${FORMULA_FILENAME/%rb/json}"
 echo "Updating info json: $INFO_PATH"
 mkdir -p Info
 brew info --json "$FORMULA_PATH" | jq '.[0]? // .' > $INFO_PATH
