@@ -1,9 +1,9 @@
-name: Build
+name: Update from release
 on:
   workflow_dispatch:
 
 jobs:
-  json:
+  update-all-info:
     runs-on: macos-latest
     permissions:
       contents: write
