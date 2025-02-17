@@ -9,17 +9,17 @@
   "license": "MIT",
   "homepage": "https://instantiator.dev/presence",
   "versions": {
-    "stable": "0.3.3",
+    "stable": "0.3.4",
     "head": null,
     "bottle": false
   },
   "urls": {
     "stable": {
-      "url": "https://github.com/instantiator/presence/releases/download/0.3.3/Presence.zip",
+      "url": "https://github.com/instantiator/presence/releases/download/0.3.4/Presence.zip",
       "tag": null,
       "revision": null,
       "using": null,
-      "checksum": "b88afa5ec1dfaed39e9067ae04210e774f725659cdb3a5a91f931db3d8923e30"
+      "checksum": "8d8589c27005d1491cf74b82d339052a4b9e5b938aa01ef0660400960e4fcab8"
     }
   },
   "revision": 0,
@@ -41,19 +41,8 @@
   "conflicts_with_reasons": [],
   "link_overwrite": [],
   "caveats": "        You'll need to do a little configuration to connect to social networks.\n        See: https://instantiator.dev/presence\n",
-  "installed": [
-    {
-      "version": "0.3.3",
-      "used_options": [],
-      "built_as_bottle": false,
-      "poured_from_bottle": false,
-      "time": 1739136315,
-      "runtime_dependencies": [],
-      "installed_as_dependency": false,
-      "installed_on_request": true
-    }
-  ],
-  "linked_keg": "0.3.3",
+  "installed": [],
+  "linked_keg": null,
   "pinned": false,
   "outdated": false,
   "deprecated": false,
@@ -69,6 +58,6 @@
   "tap_git_head": null,
   "ruby_source_path": null,
   "ruby_source_checksum": {
-    "sha256": "53020da447cba2ab1e4fa57032e284dc0aa8ee6e5ee5844c2ec73fc8109397da"
+    "sha256": "4bb231c24c5139716487d48c25c158f0ee40f1159dd993295a358acc47c1f7b9"
   }
 }
