@@ -2,6 +2,9 @@ name: Update from release
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-all-info:
     runs-on: macos-latest
