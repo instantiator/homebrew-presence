@@ -95,9 +95,9 @@ echo "Download file:  ${GH_FILENAME}"
 
 # get the latest release tag
 if [ -z "$GITHUB_TOKEN" ]; then
-  RELEASE_DATA=$( wget -q --progress=bar:force:noscroll -O - https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases )
+  RELEASE_DATA=$( wget -q -nv -O - https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases )
 else
-  RELEASE_DATA=$( wget -q --progress=bar:force:noscroll --header="Authorization: Bearer $GITHUB_TOKEN" -O - https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases )
+  RELEASE_DATA=$( wget -q -nv --header="Authorization: Bearer $GITHUB_TOKEN" -O - https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases )
 fi
 
 LATEST_RELEASE=$( echo $RELEASE_DATA | jq -r '.[].tag_name' | sort -V | tail -1 )
@@ -108,7 +108,7 @@ echo "Download URL:   ${RELEASE_DOWNLOAD_URL}"
 echo
 
 echo "Downloading latest release..."
-wget -O -q --progress=bar:force:noscroll $RELEASE_DOWNLOAD_PATH $RELEASE_DOWNLOAD_URL
+wget -nv -O $RELEASE_DOWNLOAD_PATH $RELEASE_DOWNLOAD_URL
 echo
 
 echo "Calculating SHA256..."
