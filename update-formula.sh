@@ -97,7 +97,7 @@ echo "Download file:  ${GH_FILENAME}"
 if [ -z "$GITHUB_TOKEN" ]; then
   RELEASE_DATA=$( wget -q -O - https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases )
 else
-  RELEASE_DATA=$( wget -q -O --header="Authorization: Bearer $GITHUB_TOKEN" - https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases )
+  RELEASE_DATA=$( wget -q --header="Authorization: Bearer $GITHUB_TOKEN" -O - https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases )
 fi
 
 LATEST_RELEASE=$( echo $RELEASE_DATA | jq -r '.[].tag_name' | sort -V | tail -1 )
@@ -123,9 +123,9 @@ sed -i '' -e "s|version \".*\"|version \"${LATEST_RELEASE}\"|g" $FORMULA_PATH
 echo
 
 # regenerate Info/*.json for all formulae
+FORMULA_FILENAME=$(basename $FORMULA_PATH)
 $INFO_PATH="Info/${FORMULA_FILENAME/%rb/json}"
 echo "Updating info json: $INFO_PATH"
 mkdir -p Info
-FORMULA_FILENAME=$(basename $FORMULA_PATH)
 brew info --json "$FORMULA_PATH" | jq '.[0]? // .' > $INFO_PATH
 echo
