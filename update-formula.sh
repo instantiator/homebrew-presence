@@ -85,17 +85,18 @@ fi
 TMP_DIR=$(mktemp -d)
 RELEASE_DOWNLOAD_PATH=${TMP_DIR}/${GH_FILENAME}
 
+echo "Formula path:   ${FORMULA_PATH}"
+echo "GitHub user:    ${GH_USER}"
+echo "GitHub repo:    ${GH_REPO}"
+echo "Download file:  ${GH_FILENAME}"
+
 # get the latest release tag
 RELEASE_DATA=$( wget -q -O - https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases )
 LATEST_RELEASE=$( echo $RELEASE_DATA | jq -r '.[].tag_name' | sort -V | tail -1 )
 RELEASE_DOWNLOAD_URL=$( echo $RELEASE_DATA | jq -r ".[] | select(.tag_name==\"${LATEST_RELEASE}\") | .assets[] | select(.name==\"${GH_FILENAME}\") | .browser_download_url" )
 
-echo "GitHub user:    ${GH_USER}"
-echo "GitHub repo:    ${GH_REPO}"
-echo "Download file:  ${GH_FILENAME}"
 echo "Latest release: ${LATEST_RELEASE}"
 echo "Download URL:   ${RELEASE_DOWNLOAD_URL}"
-echo "Formula path:   ${FORMULA_PATH}"
 echo
 
 echo "Downloading latest release..."
