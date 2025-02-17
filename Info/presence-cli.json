@@ -41,19 +41,8 @@
   "conflicts_with_reasons": [],
   "link_overwrite": [],
   "caveats": "        You'll need to do a little configuration to connect to social networks.\n        See: https://instantiator.dev/presence\n",
-  "installed": [
-    {
-      "version": "0.3.3",
-      "used_options": [],
-      "built_as_bottle": false,
-      "poured_from_bottle": false,
-      "time": 1739136315,
-      "runtime_dependencies": [],
-      "installed_as_dependency": false,
-      "installed_on_request": true
-    }
-  ],
-  "linked_keg": "0.3.3",
+  "installed": [],
+  "linked_keg": null,
   "pinned": false,
   "outdated": false,
   "deprecated": false,
