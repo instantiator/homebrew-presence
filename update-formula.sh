@@ -94,8 +94,11 @@ echo "GitHub repo:    ${GH_REPO}"
 echo "Download file:  ${GH_FILENAME}"
 
 # get the latest release tag
-RELEASE_DATA=$( wget -q -O - https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases )
-echo $RELEASE_DATA
+if [ -z "$GITHUB_TOKEN" ]; then
+  RELEASE_DATA=$( wget -q -O - https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases )
+else
+  RELEASE_DATA=$( wget -q -O --header="Authorization: Bearer $GITHUB_TOKEN" - https://api.github.com/repos/${GH_USER}/${GH_REPO}/releases )
+fi
 
 LATEST_RELEASE=$( echo $RELEASE_DATA | jq -r '.[].tag_name' | sort -V | tail -1 )
 RELEASE_DOWNLOAD_URL=$( echo $RELEASE_DATA | jq -r ".[] | select(.tag_name==\"${LATEST_RELEASE}\") | .assets[] | select(.name==\"${GH_FILENAME}\") | .browser_download_url" )
